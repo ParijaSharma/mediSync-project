@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker Dashboard</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-pills" id="medi"></i>
+            <h2>MEDISync</h2>
+        </div>
+        <nav>
+            <ul class="nav-section">
+                <!-- <div class="nav-section-title">Main</div> -->
+                <li><a href="index.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="mood-trends.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Medicines</span>
+                </a></li>
+                <li><a href="mindfulness.html">
+                    <i class="fas fa-spa"></i>
+                    <span>Track progress</span>
+                </a></li>
+                <!-- <div class="nav-section-title">Personal</div> -->
+                <li><a href="journal.html" class="journal-link">
+                    <i class="fas fa-book"></i>
+                    <span>journal</span>
+                </a></li>
+                <li><a href="goals.html">
+                    <i class="fas fa-bullseye"></i>
+                    <span>Goals</span>
+                </a></li>
+
+        </nav>
+        <div class="container">
+            <header>
+                <div class="header content">
+                    <div class="header-left">
+                        <div class="welcome-message">
+                            <div class="welcome-header">
+                                <h1>Welcome to MEDISync</h1> <span class="wave">👋</span>
+                                    </div>
+                                </div>   
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="main-page">
+            <div class="weekly-slider">
+                <button class="prev" oneclick="scrollLeft()">&#10094;</button>
+                <div class="slide-container">
+                    <div class="days">Monday</div>
+                    <div class="days">Tuesday</div>
+                    <div class="days">Wednesday</div>
+                    <div class="days">Thursday</div>
+                    <div class="days">Friday</div>
+                    <div class="days">Saturday</div>
+                    <div class="days">Sunday</div>
+                </div>
+                <button class="next" oneclick="scrollRight()">&#10095;</button>
+                <div>
+        </div>
+    </div>
+    <div class="flashcards-container">
+        <div class="flashcard">
+            information
+        </div>
+        <div class="flashcard">
+            information
+        </div>
+        <div class="flashcard">
+            information
+        </div>
+        <div class="flashcard">
+            information
+        </div>
+    </div>
+
+</body>
+</html>
