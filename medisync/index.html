@@ -18,21 +18,9 @@
             <h2>MEDISync</h2>
         </div>
         <nav>
-            <header class="head">
-                <div class="container">
-                        <div class="header content">
-                            <div class="header-left">
-                                <div class="welcome-message">
-                                    <div class="welcome-header">
-                                        <h1>Welcome to MEDISync</h1> <span class="wave">👋</span>
-                                            </div>
-                                        </div>   
-                                    </div>
-                                </div>
-                            </div>
-                    </header>
+      
             <ul class="nav-section">
-                <!-- <div class="nav-section-title">Main</div> -->
+               
                 <li><a href="index.html" class="active">
                     <i class="fas fa-home"></i>
                     <span>Dashboard</span>
@@ -45,7 +33,7 @@
                     <i class="fas fa-spa"></i>
                     <span>Track progress</span>
                 </a></li>
-                <!-- <div class="nav-section-title">Personal</div> -->
+             
                 <li><a href="journal.html" class="journal-link">
                     <i class="fas fa-book"></i>
                     <span>journal</span>
@@ -55,28 +43,62 @@
                     <span>Goals</span>
                 </a></li>
         </nav>
-    </div>
-
-            <div class="main-page">
-                <div class="left-section">
-                    <div class="flashcards-container">
-                        <div class="flashcard">
-                            Quick health tips
-                        </div>
-                        <div class="flashcard">
-                            Practice meditation
-                            <div class="flashcardm">
-                                <img src="undraw_meditation.svg" alt="Meditation" class="flashcard-image">
-                                <div class="timerdiv">
-                                    <button onclick="startTimer()" class="timer">start<br> timer</button>
+        
+            <div class="container">
+                    <div class="header-content">
+                        <div class="header-left">
+                            <div class="welcome-message">
+                                <div class="welcome-header">
+                                    <h1>Welcome to MEDISync</h1>
+                                     <span class="wave">👋</span>
+                                        </div>
+                                    </div>   
                                 </div>
                             </div>
                         </div>
-                        <div class="flashcard">
-                            information
+    </div>
+
+            <div class="main-page"> 
+                <div class="left-section">
+                    <div class="flashcards-container" >
+                        <div class="flashcard" onclick="flipcard(this)">
+                             <div class="card">
+                              <div class="card-face front">Quick health tips</div>  
+                              <div class="card-face back">hello</div>
                         </div>
-                        <div class="flashcard">
-                            information
+                        </div> 
+                        <div class="flashcard" onclick="flipcard(this)">
+                            <div class="card">
+                                <div class="card-face front">
+                                <div class="flashcardm">
+                                    <div class="practice-medi">Practice meditation </div>
+                                <img src="undraw_meditation.svg" alt="Meditation" class="flashcard-image">
+                                </div>
+                                <div class="timerdiv">
+                                    <button onclick="startTimer()" class="timer">start<br> timer</button>
+                                    <div class="tap">tap to know more</div>
+                                </div> 
+                                </div>
+                                <div class="card-face back">1. Start Small (2-5 Minutes)<br>
+                                    2. Find a Quiet Space <br>
+                                    3. Get Comfortable <br>
+                                    4. Focus on Your Breath <br>
+                                    6. Be Kind to Your Mind <br>
+                                    8. Meditate at the Same Time Daily <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flashcard" onclick="flipcard(this)">
+                            <div class="card">
+                                <div class="card-face front">health tips</div>  
+                                <div class="card-face back">hello</div>
+                          </div>
+                        </div>
+                        <div class="flashcard" onclick="flipcard(this)">
+                            <div class="card">
+                                <div class="card-face front"> exercise tips</div>  
+                                <div class="card-face back">hello</div>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -107,17 +129,21 @@
         <div id="medicine-modal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeMedicineModal()">&times;</span>
+                <div class="med-content">
                 <h3>Set Daily Medicines</h3>
                 <form id="medicine-form" class="medicineform">
+                    <div class="input-group">
                     <label for="medicinename">Medicine Name:</label>
-                    <input type="text" id="medicinename" required>
-        
+                    <input type="text" id="medicinename" required class="in">
+                    </div>
+                    <div class="input-group">
                     <label for="medicinetime">Time:</label>
-                    <input type="time" id="medicinetime" required>
-        
+                    <input type="time" id="medicinetime" required class="in">
+                    </div>
                     <button type="submit" class="savemed">Save Medicine</button>
                 </form>
             </div>
+         </div> 
         </div>
 
         <script>
@@ -135,6 +161,11 @@
     
             function closeMedicineModal() {
                 document.getElementById('medicine-modal').style.display = 'none';
+            }
+        </script>
+        <script>
+            function flipcard(card){
+                card.querySelector(".card").classList.toggle("flipped");
             }
         </script>
 </body>
