@@ -84,7 +84,9 @@ body {
 } */
 .logo{
     display:flex;
-    color: #e8edf4;
+    background: linear-gradient( var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
     gap:5px;
    
 }
@@ -92,10 +94,9 @@ body {
   
     margin-top: 0.5rem;
 }
-li{
-    list-style: none;
-}
-.navbar .logo::after {
+
+/* .navbar .logo::after {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     content: '';
     position: relative;
     bottom: 0;
@@ -107,15 +108,11 @@ li{
     opacity: 0.5;
     margin-left: 0;
   
-}
+} */
 
 .navbar .logo h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #e2e8f0;
-    background: linear-gradient( var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
     letter-spacing: -0.5px;
     margin-right:1rem;
     gap:5px;
@@ -130,7 +127,7 @@ li{
     align-items: center;
     justify-content: space-evenly; 
 }
-
+/* 
 .nav-section-title {
     font-size: 0.75rem;
     font-weight: 600;
@@ -142,7 +139,7 @@ li{
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
 /* Enhanced Navigation Links */
 .navbar nav a {
@@ -161,7 +158,9 @@ li{
     justify-content: space-between;
     margin-top:1.5rem ;
 }
-
+li{
+    list-style: none;
+}
 .navbar nav a i {
     font-size: 1.25rem;
     width: 1.5rem;
@@ -246,47 +245,48 @@ li{
     margin-top: auto;
     color: var(--text-secondary);
 }
-.header content{
+/* .header content{
     display: flex;
     margin-top: 2rem;
 
-}
-.container {
+} */
+.container{
     width: fit-content; /* Adjust width dynamically */
-    margin-top: 5rem;/* Center horizontally */
-    /* margin-right: 45rem; */
-    /* display: flex;
-    flex-direction: column; */
-    /* justify-content: center;
-    align-items: center; */
+    margin-top: 8rem;/* Center horizontally */
+    align-items: center; 
     width: 50%;
     font-weight: 500;
     max-width: 100%;
-    padding: 2rem;
+    padding: 1.75rem;
     position:absolute;  
-    background:linear-gradient(var(--secondary-color),var(--primary-color),var(--primary-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     display: inline-block;
     border-radius: 6px;
     /* box-shadow:var(--shadow); */
 }
-.header content h1 {
+ .container h1{
+    font-size:1.5rem;
+    background:linear-gradient(var(--secondary-color),var(--primary-color),var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+} 
+.header-content h1 {
+    justify-content: center;
+    opacity: 1;
     top: auto;
     display: flex;
     position: fixed;
     font-size: 2em;
     font-weight: bold;
-    unicode-bidi: isolate;
-}
-/* .contain{
-    display: flex;
-    margin-top: 14rem;
-}
-.container {
-    margin-top: 100px; /* Pushes below navbar */
 
-body{
+}
+h1{
+    margin: auto;
+    opacity: 1;
+    mix-blend-mode: normal;
+}
+
+/* body{
     margin: 0;
     padding: 0;
     display: flex;
@@ -295,14 +295,29 @@ body{
     justify-content: center; 
     min-height: 100vh;
     background-color: #f4f4f4;
+} */
+.welcome-header h1{
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, var(--secondary-color), var(--primary-color), var(--primary-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display:inline-block;
+    /* text-align: center; */
+}
+.welcome-header{
+    display: flex;
+    gap: 10px; /* Adds spacing between text and emoji */
 }
 .username{
     font-size: 1.7rem;
 }
-.wave{
+.container .wave{
+   margin-left: 22rem;
+    display: inline-flex;
     font-size: 1.75rem;
     animation: wave 2s infinite;
-    display: inline-block;
+    /* display: inline-block; */
     transform-origin: 75% 75%;
 }
 @keyframes wave{
@@ -323,11 +338,11 @@ body{
     margin-top: 8rem;
 } 
 .left-section{
-    width: 45%;
+    width: 50%;
     padding-right: 10px;
 }
 .right-section{
-    width: 55%;
+    width: 50%;
     padding-left: 10px;
 }
 .flashcards-container{
@@ -338,33 +353,81 @@ body{
 }
 
 .flashcard{
-    background:linear-gradient(var(--primary-color),var(--secondary-color));
+    background:var(--primary-light);
     opacity: 90%;
     padding: 5px;
     border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(54, 53, 53, 0.2);
-    height: 150px;
+    height: 200px;
     display: flex;
-    flex-direction: column; /* Stack the text and image vertically */
+    /* flex-direction: column; */
     align-items: center; /* Center content horizontally */
     justify-content: space-between; /* Distribute space between text and image */
     text-align: center; /* Center the text */
+    cursor: pointer;
+    perspective: 1000px;
 
+}
+.card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.card.flipped{
+    transform: rotateY(180deg);
+    /* transform: rotateZ(180deg); */
+}
+.card-face{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    padding: 10px;
+}
+.front{
+    background:linear-gradient(var(--primary-color),var(--secondary-color));
+    background-color:var(--primary-color);
+    color: white;
+}
+.back{
+    background-color: var(--primary-color);
+    color: white;
+    transform: rotateY(170deg);
+  
+}
+.tap{
+    margin-top: 10px;
+    font-size: xx-small;
 }
 .flashcardm{
     display: flex;
+    /* flex-direction: row;  */
     width: 100%;
-    height: 130px;
+    height:auto;;
     align-items: center;
     justify-content: center;
-    border-radius: 15px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.practice-medi{
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
 }
 .flashcard-image {
     max-width: 100%; /* Make the image responsive */
-    max-height: 90%; /* Make the image responsive */
+    max-height:70px; /* Make the image responsive */
     object-fit: contain; /* Ensure the image fits within the container */
-    border-radius: 15px;
+    border-radius: 10px;
 }
+
 .weekly-slider{
     display: flex;
     width: 100%;
@@ -398,7 +461,7 @@ body{
 
 }
 .days:hover {
-    background:rgba(38, 29, 222, 0.1);
+    background-color: #3498db; 
     transform: scale(1.1);
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -412,16 +475,18 @@ body{
     border-radius: 10px;
     box-shadow: var(--shadow-sm);
     justify-content: center;
+    align-items: center;
     display: flex;
   }
   .prev:hover, .next:hover {
     background-color: #555;
 }
+
 .medicine-panel {
     /* display: flex; */
     background:rgba(13, 0, 0, 0.3);
-    padding: 15px;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     line-height:2rem ;
@@ -436,17 +501,20 @@ body{
 }
 .set-medicine {
     /* display: flex; */
-    background:linear-gradient(var(--primary-color),var(--secondary-color));
-    color: white;
-    padding: 8px 15px;
+    background:#5dade2;
+    color:var(--card-bg);
+    padding: 10px 15px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: bold;
 }
 .set-medicine:hover{
+    background: linear-gradient(to right, #00f2fe, #4facfe);
     transform: scale(1.1);
 }
 .modal {
+    display: none;
     display:flex;
     position: absolute;
     z-index: 1000;
@@ -454,43 +522,100 @@ body{
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     padding: 15px;
-    gap:10px;
+  
 }
-
 .modal-content {
-    background:var(--background-color);
+
+    background:rgba(119,209,245,0.5);
     padding: 20px;
-    line-height: 2rem;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 500px;
-    height: 300px;
     text-align: center;
+    position:relative;
+    box-shadow:  0 4px 8px rgba(0, 0, 0, 0.2);
     
 }
-.medicineform{
-    line-height: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-.savemed{
-    background: linear-gradient(var(--primary-color),var(--secondary-color));
+.modal-content h3{
+    color: var(--card-bg);
 }
 .close {
+    position: absolute;
+    top:10px;
+    right: 15px;
     float: right;
     font-size: 24px;
     cursor: pointer;
+    color: #333;
 }
+.medicineform{
+    margin: 1.75rem 2rem 1.75rem 2rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.input-group {
+    display: flex;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 15px;
+    /* width: 90%; */
+
+}
+.in{
+    border-style: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color:var(--card-bg);
+    margin: 0.75rem 0.7rem;
+}
+
+.input[type="text"], input[type="time"] {
+    width: 120px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    gap:10px ;
+    border-style: none;
+}
+
+.savemed{
+    background: linear-gradient(var(--primary-color),var(--secondary-color));
+    color: white;
+    border-style: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: large;
+    padding: 10px 15px;
+}
+.savemed:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+}
+/* .med-content{
+    display: flex;
+    margin: auto;
+    line-height: 1rem;
+} */
+/* .timerdiv {
+    margin-top: 10px;
+} */
 .timer{
     gap:5px;
     font-weight: 700;
-    align-items: center;
-    justify-content: center;
     width: 4rem;
     height: 3rem;
     border-radius: 5px;
@@ -499,4 +624,13 @@ body{
     color: var(--text-primary);
     background-color: var(--background-color);
     margin: 5px;
+} 
+.timer:hover{
+    transform: scale(1.1);
+    background-color:var(--success-color);
+}
+.content{
+    display: flex;
+    line-height: 1rem;
+    gap:15px
 }
