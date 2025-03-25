@@ -63,7 +63,9 @@
                     <div class="flashcards-container" >
                         <div class="flashcard" onclick="flipcard(this)">
                              <div class="card">
-                              <div class="card-face front">Quick health tips</div>  
+                              <div class="card-face front">Nutrition
+                                <img src="eat.svg" alt="" class="flashcard-image"> 
+                              </div>  
                               <div class="card-face back">hello</div>
                         </div>
                         </div> 
@@ -90,14 +92,30 @@
                         </div>
                         <div class="flashcard" onclick="flipcard(this)">
                             <div class="card">
-                                <div class="card-face front">health tips</div>  
-                                <div class="card-face back">hello</div>
+                                <div class="card-face front">Exercise
+                                    <img src="exercise.svg" alt="" class="flashcard-image"> 
+                                </div> 
+                                <div class="card-face back">1. Start Small & Stay Consistent <br>
+                                    "Even 10 minutes of movement counts! Begin with a short walk or light stretching." <br>
+                                    2. Warm-Up Before & Cool Down After <br>
+                                    "Prepare your muscles with dynamic stretches before exercising and cool down with gentle stretches afterward." <br>
+                                    3. Mix It Up <br>
+                                    "Try different workouts like cardio, strength training, and yoga to keep things fun and balanced!" <br>
+                                    4. Stay Hydrated 💧 <br>
+                                    "Drink water before, during, and after your workout to avoid dehydration." <br>
+                                    5. Maintain Proper Posture <br>
+                                    "Good form reduces injury risk. Keep your back straight, engage your core, and avoid hunching!"</div>
                           </div>
                         </div>
                         <div class="flashcard" onclick="flipcard(this)">
                             <div class="card">
-                                <div class="card-face front"> exercise tips</div>  
-                                <div class="card-face back">hello</div>
+                                <div class="card-face front">Medical Care
+                                    <img src="health.svg" alt="" class="flashcard-image"> 
+                                </div>  
+                                <div class="card-face back">
+                                    <label for="medicalcare">Upload prescriptions here <br></label>
+                                    <div><input type="file" name="prescription"></div>
+                                </div>
                           </div>
                         </div>
                     </div>
@@ -133,14 +151,19 @@
                 <h3>Set Daily Medicines</h3>
                 <form id="medicine-form" class="medicineform">
                     <div class="input-group">
-                    <label for="medicinename">Medicine Name:</label>
+                    <label for="medicinename">Medicine<br> Name:</label>
                     <input type="text" id="medicinename" required class="in">
                     </div>
                     <div class="input-group">
-                    <label for="medicinetime">Time:</label>
+                    <label for="medicinetime"><pre class="pre">Time:     </pre></label>
                     <input type="time" id="medicinetime" required class="in">
                     </div>
-                    <button type="submit" class="savemed">Save Medicine</button>
+                    <div class="input-group">
+                    <label for="medicinetime">Dosage:</label>
+                    <input type="text" id="dosage" required class="in">
+                    </div>
+                    <div class="Button"><button type="submit" class="savemed1">Reset</button>
+                    <button type="submit" class="savemed2">Save Medicine</button></div>
                 </form>
             </div>
          </div> 
