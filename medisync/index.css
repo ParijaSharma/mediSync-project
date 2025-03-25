@@ -265,7 +265,7 @@ li{
 }
  .container h1{
     font-size:1.5rem;
-    background:linear-gradient(var(--secondary-color),var(--primary-color),var(--primary-light));
+    background:linear-gradient(var(--primary-color),var(--primary-light),var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -364,7 +364,7 @@ h1{
     align-items: center; /* Center content horizontally */
     justify-content: space-between; /* Distribute space between text and image */
     text-align: center; /* Center the text */
-    cursor: pointer;
+    cursor: pointer; 
     perspective: 1000px;
 
 }
@@ -397,9 +397,17 @@ h1{
     color: white;
 }
 .back{
+    scroll-behavior: smooth;
+    height: 190px;
+    scrollbar-width:thin;
+    overflow-y: auto; 
+    font-size: small;
     background-color: var(--primary-color);
     color: white;
     transform: rotateY(170deg);
+    display: flex;
+    align-items: center;
+
   
 }
 .tap{
@@ -529,8 +537,7 @@ h1{
   
 }
 .modal-content {
-
-    background:rgba(119,209,245,0.5);
+    background:rgba(119,209,245,0.7);
     padding: 20px;
     border-radius: 10px;
     width: 500px;
@@ -567,6 +574,12 @@ h1{
     /* width: 90%; */
 
 }
+
+.pre{
+    font-weight: bold;
+    font-size:1rem;
+    font-family: 'Inter', sans-serif;
+}
 .in{
     border-style: none;
     border-radius: 5px;
@@ -590,8 +603,10 @@ label {
     gap:10px ;
     border-style: none;
 }
-
-.savemed{
+.input[type="text"], input[type="time"] :hover{
+    border: 1px solid rgb(86, 212, 250);
+}
+.savemed1 ,.savemed2{
     background: linear-gradient(var(--primary-color),var(--secondary-color));
     color: white;
     border-style: none;
@@ -599,11 +614,19 @@ label {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-weight: bold;
-    font-size: large;
+    font-size:1rem;
     padding: 10px 15px;
+    margin: auto;
 }
-.savemed:hover {
+.savemed1:hover {
     background: linear-gradient(to right, #00f2fe, #4facfe);
+}
+.savemed2:hover {
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+}
+.Button{
+    display: inline;
+    gap: 10px;
 }
 /* .med-content{
     display: flex;
