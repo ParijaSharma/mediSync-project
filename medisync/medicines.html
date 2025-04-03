@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="medicines.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Upload your prescriptions</h2>
+        <div class="upload-med">
+            <label for="prescriptionFile" class="custom-file-upload">
+                Choose File
+            </label>
+            <input type="file"  id="medpres"/>
+            <span id="file-name">No file chosen</span>
+            <button onclick="uploadprescription()">Upload</button>
+        </div>
+        <h3>Your Prescriptions</h3>
+        <div class="prescription-list" id="prescription-list">
+            
+        </div>
+    </div>
+    
+</body>
+</html>
