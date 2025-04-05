@@ -1,35 +1,62 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="medicines.css">
 </head>
 <body>
+    <div class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-pills" id="medi"></i>
+            <h2>MEDISync</h2>
+        </div>
+        <nav>
+      
+            <ul class="nav-section">
+               
+                <li><a href="index.html" class="active">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a></li>
+                <li><a href="medicines.html">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Medicines</span>
+                </a></li>
+                <li><a href="mindfulness.html">
+                    <i class="fas fa-spa"></i>
+                    <span>Track progress</span>
+                </a></li>
+             
+        </nav>
+        </div>
+
     <div class="container">
         <h2>Upload your prescriptions</h2>
         <div class="upload-med">
-            <label for="prescriptionFile" class="custom-file-upload">
+            <label for="medpres" class="custom-file-upload">
                 Choose File
             </label>
             <input type="file"  id="medpres"/>
             <span id="file-name">No file chosen</span>
-            <button onclick="uploadprescription()">Upload</button>
+            <button onclick="uploadPrescription()">Upload</button>
         </div>
         <h3>Your Prescriptions</h3>
-        <div class="prescription-list" id="prescription-list">
+        <div class="prescription-item" id="prescription-item">
         </div>
     </div>
     <div class="appointment-box">
         <h3>Manage Appointments</h3>
         <div class="manage-dates">
             <input type="date"  id="manage">
-            <button type="submit">Add Appointments</button>
+            <button type="submit" onclick="manageAppointments()">Add Appointments</button>
         </div>
-        <div class="apointment-list">
+        <div class="appointment-list" id="appointment-list">
             
         </div>
     </div>
+   <script src="medicines.js"></script>
 </body>
 </html>
