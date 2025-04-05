@@ -35,19 +35,166 @@ body {
     height: 100vh;
    background-image: url("background.jpg");
 }
-.container{
-    /* margin: 10rem 20rem 10rem 20rem; */
-    /* display: flex;
+.navbar{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    background:#0F1111;
+    padding: 1rem 2rem;
+    box-shadow: var(--shadow);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
     align-items: center;
-    justify-content: center; */
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+}
+.logo{
+    display:flex;
+    background: linear-gradient( var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    gap:5px;
+   
+}
+#medi{
+  
+    margin-top: 0.5rem;
+}
+
+.navbar .logo h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-right:1rem;
+    gap:5px;
+    border-radius: 4px;
+}
+
+/* Enhanced Navigation Sections */
+.nav-section {
+    margin-bottom: 2rem;
+    padding: 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+.navbar nav a {
+    display: flex;
+    gap: 1rem;
+    padding: 0.875rem 1.25rem;
+    margin: 0.25rem 0;
+    text-decoration: none;
+    color: var(--text-secondary);
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:1.5rem ;
+}
+li{
+    list-style: none;
+}
+.navbar nav a i {
+    font-size: 1.25rem;
+    width: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.navbar nav a:hover {
+    background: rgba(79, 70, 229, 0.08);
+    color: var(--primary-color);
+}
+
+.navbar nav a:hover i {
+    transform: scale(1.1);
+} 
+.navbar nav a.active:hover {
+    background: rgba(79, 70, 229, 0.08);
+    color: var(--primary-color);
+}
+
+.navbar nav a.active:hover i {
+    transform: scale(1.1);
+} 
+.navbar nav a.active {
+    margin-top: 1.5rem;
+    /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+    color: white;
+    /* box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2); */
+}
+
+.navbar nav a.active::before {
+    /* content: ''; */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 20px;
+    background: white;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Special Link Styles */
+.navbar nav a.logout-link {
+    margin-top: 2rem;
+    color: var(--danger-color);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.navbar nav a.logout-link:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.navbar nav a.help-link {
+    color: var(--primary-color);
+    background: rgba(79, 70, 229, 0.05);
+}
+
+.navbar nav a.help-link:hover {
+    background: rgba(79, 70, 229, 0.1);
+}
+
+/* Hover Effects */
+.navbar nav a::after {
+    content: ''; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    pointer-events: none;
+}
+
+.navbar nav a:hover::after {
+    transform: translate(-50%, -50%) scale(2);
+}
+
+.help-link {
+    margin-top: auto;
+    color: var(--text-secondary);
+}
+.container{
+  
     background: #fff;
     text-align: center;
     border: var(--secondary-color);
     border-radius: 10px;
-    /* width:auto;
-    height: 100%; */
+  
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     width: 30rem;
+    margin-right: 20px;
 
 }
 .upload-med{
@@ -70,13 +217,15 @@ body {
     background: linear-gradient(to right,  #49c4f4, #4facfe);
     margin-left: 12rem; 
     margin-top: 1.5rem;
+    font-weight: bold;
    
 }
 .upload-med button:hover{
     transform: scale(1.1);
+    background: #0056b3;
 }
 input[type="file"] {
-    display: none; /* Hides default file input */
+    display: none; 
 }
 
 .custom-file-upload {
@@ -98,4 +247,55 @@ input[type="file"] {
 .prescription-list{
     display: flex;
     text-align: left;
+}
+.appointment-box{
+    background: #fff;
+    text-align: center;
+    border: var(--secondary-color);
+    border-radius: 10px;
+   
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 25rem;
+}
+.manage-dates{
+    padding: 10px;
+    border: 2px dashed #818cf8;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    align-items:center;
+}
+input[type="date"] {
+   border:2px solid #0056b3;
+   border-radius: 5px;
+   font-size: medium;
+   padding: 10px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.appointment-box button {
+    border-style:none ;
+    border-radius: 5px;
+    font-size: medium;
+    padding: 10px;
+    background: linear-gradient(to right,  #49c4f4, #4facfe);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    color: #e2e8f0;
+    font-weight: bold;
+ }
+ .appointment-box button:hover{
+    transform: scale(1.1);
+    background: #0056b3;
+ } 
+ .prescription-item {
+    margin: 10px 0;
+    padding: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: var(--shadow-sm);
+}
+
+.prescription-item img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
 }
