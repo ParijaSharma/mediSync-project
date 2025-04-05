@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const slideContainer = document.querySelector(".slide-container");
     const prevButton = document.querySelector(".prev");
     const nextButton = document.querySelector(".next");
-
+    
     // Hide all medicine panels on page load except Monday's panel
     medicinePanels.forEach((panel, index) => {
         panel.style.display = index === 0 ? "block" : "none";
